@@ -1,0 +1,49 @@
+extends layout.pug
+block content
+  section(class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://cdn.marvel.com/content/1x/dp3_1sht_digital_srgb_ka_swords_v5_resized.jpg');")
+    div(class="absolute inset-0 bg-black opacity-60")
+    div(class="relative z-10 text-center")
+      h1(class="text-5xl font-bold mb-4") Unlimited Movies, TV Shows, & More
+      p(class="text-xl mb-8") Spain, France | 2h 16m
+      button(class="bg-yellow-400 text-gray-900 px-8 py-3 rounded-full text-xl font-semibold hover:bg-yellow-500") Start Watching
+
+  section(class="py-16 px-6")
+    h2(class="text-3xl font-bold mb-8") New Releases
+    div(class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6")
+      // Movie Card (repeated 5 times)
+      each i in [1, 2, 3, 4, 5]
+        div(class="bg-gray-800 rounded-lg overflow-hidden")
+          img(src="/api/placeholder/300/450", alt="Movie Poster", class="w-full h-auto")
+          div(class="p-4")
+            h3(class="font-semibold mb-1") Movie Title
+            p(class="text-sm text-gray-400") Action, Adventure
+            div(class="flex items-center mt-2")
+              svg(class="w-4 h-4 text-yellow-400 mr-1", fill="currentColor", viewBox="0 0 20 20")
+                path(d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z")
+              span(class="text-sm") 4.5
+
+  section(class="py-16 px-6 bg-gray-800")
+    h2(class="text-3xl font-bold mb-8") Upcoming Movies
+    div(class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8")
+      // Upcoming Movie Card (repeated 4 times)
+      each i in [1, 2, 3, 4]
+        div(class="bg-gray-900 rounded-lg overflow-hidden")
+          img(src="/api/placeholder/400/600", alt="Upcoming Movie Poster", class="w-full h-auto")
+          div(class="p-4")
+            h3(class="font-semibold text-lg mb-1") Upcoming Movie Title
+            p(class="text-sm text-gray-400") Sci-Fi, Thriller
+            p(class="text-sm text-yellow-400 mt-2") Coming Soon
+
+  section(class="relative py-24 bg-cover bg-center" style="background-image: url('/api/placeholder/1920/600');")
+    div(class="absolute inset-0 bg-black opacity-70")
+    div(class="relative z-10 container mx-auto px-6 text-center")
+      h2(class="text-4xl font-bold mb-4") Featured: EMO
+      p(class="text-xl mb-8") Experience the thrill of emotion in this groundbreaking new film
+      button(class="bg-yellow-400 text-gray-900 px-8 py-3 rounded-full text-xl font-semibold hover:bg-yellow-500") Watch Trailer
+
+  section(class="py-16 px-6")
+    div(class="bg-gray-800 rounded-lg p-8 flex items-center justify-between")
+      div
+        h3(class="text-2xl font-bold mb-2") HD 4K Resolution!
+        p(class="text-gray-400") Upgrade now for crystal clear viewing
+      button(class="bg-yellow-400 text-gray-900 px-6 py-3 rounded-full text-lg font-semibold hover:bg-yellow-500") Upgrade
